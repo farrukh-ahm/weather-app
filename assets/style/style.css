@@ -1,3 +1,128 @@
-span{
-    display: block;
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Montserrat:wght@100;200;300;400&family=Tiro+Gurmukhi&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-color: linear-gradient(to right top, 
+    #3b9614, #3ca014, #3ca913, 
+    #3cb313, #3cbd12, #37b911, 
+    #33b411, #2eb010, #259c0e, 
+    #1d890b, #157608, #0e6406);
+
+    --glass: linear-gradient(to right top, 
+    #9a9f98, #a0a59e, #a6aca5, 
+    #adb2ab, #b3b9b2, #b4bab3, 
+    #b5bbb4, #b6bcb5, #b2b7b0, 
+    #adb3ac, #a9aea7, #a5aaa3);
+}
+
+body{
+    /* background-image: var(--bg-color); */
+    background-color: #C0DAB7;
+    font-family: 'Tiro Gurmukhi', serif;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+}
+
+#data-wrapper{
+    height: 25rem;
+    width: 100vw;
+    /* margin: 40% auto; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: red; */
+}
+
+#container{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    position: relative;
+    /* background-color: grey; */
+}
+
+#container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: var(--glass);
+    opacity: 0.25;
+    border-radius: 20px;
+    z-index: 5;
+    box-shadow: 0 0 8px;
+}
+
+#temp{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#temp > h2{
+    font-family: 'Alumni Sans Inline One', cursive;
+    font-size: 5em;
+    letter-spacing: 5px;
+}
+
+#feels {
+    font-size: 1.2em;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#humidity {
+    font-size: 1.2em;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#condition{
+    font-size: 1.1em;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 1.5px;
+}
+
+#wind{
+    font-size: 1.1em;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    transform: translate(20%, -50%);
+}
+
+#location{
+    font-size: 0.75em;
+    position: absolute;
+    top: -7%;
+    left: 10%;
+    transform: translate(-20%, 50%);
+}
+
+#time{
+    font-size: 1.2em;
+    position: absolute;
+    top: -10%;
+    right: 10%;
+    transform: translate(20%, 50%);
 }
