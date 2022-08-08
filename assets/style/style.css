@@ -95,18 +95,32 @@ body{
 
 
 #condition{
-    font-size: 1.1em;
     position: absolute;
-    top: 10%;
-    left: 10%;
+    top: 15%;
+    left: 20%;
     transform: translate(-50%, -50%);
-    letter-spacing: 1.5px;
+    /* display: flex;
+    justify-content: center; */
+    /* letter-spacing: 1.5px; */
+    /* background-color: blue; */
+}
+
+#condition>img,#condition>p{
+    display: inline;
+}
+
+#condition> p{
+    font-size: 1em;
+}
+#condition>img{
+    background-color: white;
+    z-index: -1;
 }
 
 #wind{
-    font-size: 1.1em;
+    font-size: 1em;
     position: absolute;
-    top: 10%;
+    top: 15%;
     right: 10%;
     transform: translate(20%, -50%);
 }
@@ -115,7 +129,7 @@ body{
     font-size: 0.75em;
     position: absolute;
     top: -7%;
-    left: 10%;
+    left: 12%;
     transform: translate(-20%, 50%);
 }
 
@@ -125,4 +139,12 @@ body{
     top: -10%;
     right: 10%;
     transform: translate(20%, 50%);
+}
+
+
+@media screen and (min-width: 550px) {
+    
+    #data-wrapper{
+        width: 50%;
+    }
 }
