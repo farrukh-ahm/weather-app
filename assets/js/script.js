@@ -9,6 +9,7 @@ let insert;
 document.addEventListener("DOMContentLoaded", ()=>{
 
     getLocation();
+    setInterval(displayTime, 100)
 
 })
 
@@ -48,22 +49,19 @@ function displayData(data){
     insert = `<div id="temp"><h2>${data.current.temp_c} C</h2></div>`
     insert += `<p id="feels">Feels Like: ${data.current.feelslike_c} C</p>`
     insert += `<p id="humidity">Humidity: ${data.current.humidity}</p>`
-    insert += `<div id="condition"><img src="${data.current.condition.icon}"><p>${data.current.condition.text}</p></div>`
+    insert += `<img src="${data.current.condition.icon}" id="condition-icon">`
+    insert += `<p id="condition">${data.current.condition.text}</p>`
     insert += `<p id="wind">Wind: ${data.current.wind_kph}kph</p>`
     insert += `<p id="location">${data.location.name}, ${data.location.region}, ${data.location.country}</p>`
-    let loTime = new Date(data.location.localtime_epoch * 1000).toLocaleTimeString();
-    insert += `<p id="time">${loTime}</p>`
-    document.getElementById("container").innerHTML = insert;
+    // let loTime = new Date(data.location.localtime_epoch * 1000).toLocaleTimeString();
+    // insert += `<p id="time">${loTime}</p>`
+    document.getElementById("container").insertAdjacentHTML("beforeend", insert);
+    // document.getElementById("condition").style.backgroundImage = `url("${data.current.condition.icon}")`
+}
 
-    // document.getElementById("name").innerHTML = `Name: ${data.location.name}`;
-    // document.getElementById("region").innerHTML = `Region: ${data.location.region}`;
-    // document.getElementById("country").innerHTML = `Country: ${data.location.country}`;
-    
-    // document.getElementById("time").innerHTML = `Time: ${loTime}`;
-    // document.getElementById("temp").innerHTML = `Current-Temp: ${data.current.temp_c}C`;
-    // document.getElementById("feels-like").innerHTML = `Feels-Like: ${data.current.feelslike_c}C`;
-    // document.getElementById("humidity").innerHTML = `Humidity: ${data.current.humidity}`;
-
+function displayTime(){
+    let currentTime = new Date()
+    document.getElementById("time").innerText = currentTime.toLocaleTimeString();
 }
 
 

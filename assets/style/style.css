@@ -74,6 +74,9 @@ body{
     font-family: 'Alumni Sans Inline One', cursive;
     font-size: 5em;
     letter-spacing: 5px;
+    background-image: var(--bg-color);
+    background-clip: text;
+    color: transparent;
 }
 
 #feels {
@@ -94,33 +97,44 @@ body{
 }
 
 
-#condition{
+#condition-icon{
     position: absolute;
     top: 15%;
     left: 20%;
     transform: translate(-50%, -50%);
-    /* display: flex;
-    justify-content: center; */
-    /* letter-spacing: 1.5px; */
-    /* background-color: blue; */
 }
 
-#condition>img,#condition>p{
-    display: inline;
-}
-
-#condition> p{
+#condition{
+    position: absolute;
+    top: 27%;
+    left: 20%;
+    transform: translate(-50%, -50%);
     font-size: 1em;
+    /* background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-clip: content-box;
+    overflow: visible; */
+    letter-spacing: 1.5px;
+    /* background-color: blue;*/
 }
-#condition>img{
+
+/* #condition>img,#condition>p{
+    display: inline;
+} */
+
+/* #condition> p{
+    font-size: 1em;
+} */
+/* #condition>img{
     background-color: white;
     z-index: -1;
-}
+} */
 
 #wind{
     font-size: 1em;
     position: absolute;
-    top: 15%;
+    top: 27%;
     right: 10%;
     transform: translate(20%, -50%);
 }
@@ -146,5 +160,13 @@ body{
     
     #data-wrapper{
         width: 50%;
+    }
+}
+
+
+@media screen and (min-width: 900px) {
+    
+    #data-wrapper{
+        width: 35%;
     }
 }
