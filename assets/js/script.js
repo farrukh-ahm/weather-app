@@ -2,12 +2,12 @@ const KEY = "3322850824c94ab79c4164448220508";
 let latitude = 0;
 let longitude = 0;
 let insert;
+let loading = document.getElementById("loading-box");
 
 // let button = document.getElementById("btn")
 // button.addEventListener("click", getWeather)
 
 document.addEventListener("DOMContentLoaded", ()=>{
-
     getLocation();
     setInterval(displayTime, 100)
 
@@ -45,6 +45,7 @@ async function getWeather(lat, lon){
 
 
 function displayData(data){
+    document.getElementById("data-wrapper").removeChild(loading);
     insert = "";
     insert = `<div id="temp"><h2>${data.current.temp_c} C</h2></div>`
     insert += `<p id="feels">Feels Like: ${data.current.feelslike_c} C</p>`
