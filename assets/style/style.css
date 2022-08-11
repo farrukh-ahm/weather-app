@@ -76,6 +76,7 @@ body{
     letter-spacing: 5px;
     background-image: var(--bg-color);
     background-clip: text;
+    -webkit-background-clip: text;
     color: transparent;
 }
 
