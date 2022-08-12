@@ -165,10 +165,42 @@ body{
 }
 
 
+#forecast-wrapper{
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 30rem;
+    width: 90vw;
+    border-radius: 20px;
+    background-color: white;
+    /* margin-bottom: 50px; */
+}
+
+#forecast-container{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    background-color: hotpink;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.5rem;
+}
+
+.forecast{
+    width: 90%;
+    height: 4em;
+    border-radius: 10px;
+    background-color: honeydew;
+    margin: auto;
+    text-align: center;
+    padding: 1.5em;
+}
+
 @media screen and (min-width: 550px) {
     
     #data-wrapper{
-        width: 50%;
+        width: 60%;
     }
 }
 
@@ -177,5 +209,20 @@ body{
     
     #data-wrapper{
         width: 35%;
+    }
+
+    #forecast-wrapper{
+        width: 80vw;
+    }
+    
+    #forecast-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .forecast{
+        width: 70%;
+        height: 4em;
     }
 }
