@@ -171,9 +171,9 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     height: 30rem;
-    width: 90vw;
+    width: 100vw;
     border-radius: 20px;
-    background-color: white;
+    /* background-color: white; */
     /* margin-bottom: 50px; */
 }
 
@@ -181,7 +181,7 @@ body{
     height: 100%;
     width: 100%;
     border-radius: 20px;
-    background-color: hotpink;
+    /* background-color: hotpink; */
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 0.5rem;
@@ -193,8 +193,35 @@ body{
     border-radius: 10px;
     background-color: honeydew;
     margin: auto;
+    /* padding: 1.5em; */
+    font-size: 80%;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    /* justify-content: center;
+    align-items: center; */
+    /* gap: 1rem */
+    /* position: relative; */
+}
+
+.forecast> p {
+    grid-column: 1/4;
+    /* background-color: #37b911; */
     text-align: center;
-    padding: 1.5em;
+}
+
+.for_img{
+    height: 2.5em;
+    width: 2.5em;
+    /* background-color: #0e6406; */
+    grid-column: 4/4;
+    /* float: right; */
+    /* margin: auto; */
+    /*display: inline-block; */
+    /* top: 50%;
+    right: 10%;
+    transform: translateY(-50%); */
 }
 
 @media screen and (min-width: 550px) {
@@ -222,7 +249,7 @@ body{
     }
     
     .forecast{
-        width: 70%;
+        width: 80%;
         height: 4em;
     }
 }

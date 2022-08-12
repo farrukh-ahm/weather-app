@@ -2,6 +2,8 @@ const KEY = "3322850824c94ab79c4164448220508";
 let latitude = 0;
 let longitude = 0;
 let insert;
+let insertForecast;
+const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; 
 let loading = document.getElementById("loading-box");
 
 // let button = document.getElementById("btn")
@@ -29,6 +31,7 @@ function currentLocation(location){
     lat = location.coords.latitude;
     lon = location.coords.longitude;
     getWeather(lat, lon);
+    getForecast(lat, lon);
 }
 
 
@@ -37,8 +40,20 @@ async function getWeather(lat, lon){
     const data = await response.json();
 
     if(response.ok){
-        console.log(data)
+        // console.log(data)
         displayData(data)
+    }
+    else{console.log("Error")}
+}
+
+
+async function getForecast(lat, lon){
+    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${KEY}&q=${lat},${lon}&days=6&aqi=no&alerts=no`);
+    const data = await response.json();
+
+    if(response.ok){
+        console.log(data)
+        displayForecast(data);
     }
     else{console.log("Error")}
 }
@@ -59,6 +74,21 @@ function displayData(data){
     document.getElementById("container").insertAdjacentHTML("beforeend", insert);
     // document.getElementById("condition").style.backgroundImage = `url("${data.current.condition.icon}")`
 }
+
+
+function displayForecast(data){
+    for(let i of data.forecast.forecastday){
+        let dateFor = new Date(i.date_epoch * 1000).getDay();
+        insertForecast = `<div class="forecast"><p>${DAYS[dateFor]}&nbsp;&nbsp; Max: ${i.day.maxtemp_c} C | Min: ${i.day.mintemp_c} C</p><img src="${i.day.condition.icon}" class="for_img"></div>`;
+        document.getElementById("forecast-container").insertAdjacentHTML("beforeend", insertForecast);
+        insertForecast = "";
+        console.log(dateFor);
+        console.log(i.day.maxtemp_c);
+        console.log(i.day.mintemp_c);
+        console.log(i.day.condition.icon);
+    }
+}
+
 
 function displayTime(){
     let currentTime = new Date()
