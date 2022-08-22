@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Montserrat:wght@100;200;300;400&family=Tiro+Gurmukhi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Tiro+Gurmukhi:ital@0;1&display=swap');
 
 *{
     margin: 0;
@@ -24,10 +24,22 @@ body{
     /* background-image: var(--bg-color); */
     background-color: #C0DAB7;
     font-family: 'Tiro Gurmukhi', serif;
+    /* min-height: 100vh; */
+    width: 100%;
+    /* position: relative; */
     /* display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; */
+}
+
+#head{
+    height: 150px;
+    width: 100%; 
+    background-color: gold;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 #data-wrapper{
@@ -71,9 +83,9 @@ body{
 }
 
 #temp > h2{
-    font-family: 'Alumni Sans Inline One', cursive;
-    font-size: 5.2em;
-    letter-spacing: 5px;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 5em;
+    /* letter-spacing: 1px; */
     background-image: var(--bg-color);
     background-clip: text;
     -webkit-background-clip: text;
@@ -111,26 +123,10 @@ body{
     left: 20%;
     transform: translate(-50%, -50%);
     font-size: 1em;
-    /* background-position: center;
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-clip: content-box;
-    overflow: visible; */
     letter-spacing: 1.5px;
     /* background-color: blue;*/
 }
 
-/* #condition>img,#condition>p{
-    display: inline;
-} */
-
-/* #condition> p{
-    font-size: 1em;
-} */
-/* #condition>img{
-    background-color: white;
-    z-index: -1;
-} */
 
 #wind{
     font-size: 1em;
@@ -173,8 +169,6 @@ body{
     height: 30rem;
     width: 100vw;
     border-radius: 20px;
-    /* background-color: white; */
-    /* margin-bottom: 50px; */
 }
 
 #forecast-container{
@@ -193,16 +187,11 @@ body{
     border-radius: 10px;
     background-color: honeydew;
     margin: auto;
-    /* padding: 1.5em; */
     font-size: 80%;
     align-items: center;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0.5rem;
-    /* justify-content: center;
-    align-items: center; */
-    /* gap: 1rem */
-    /* position: relative; */
 }
 
 .forecast> p {
@@ -216,18 +205,36 @@ body{
     width: 2.5em;
     /* background-color: #0e6406; */
     grid-column: 4/4;
-    /* float: right; */
-    /* margin: auto; */
-    /*display: inline-block; */
-    /* top: 50%;
-    right: 10%;
-    transform: translateY(-50%); */
+}
+
+#foot{
+    width: 100vw;
+    height: 15.625rem;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+@media screen and (max-width: 360px){
+    #temp > h2{
+        font-size: 4.5em;
+    }
 }
 
 @media screen and (min-width: 550px) {
     
     #data-wrapper{
         width: 60%;
+    }
+
+    #forecast-wrapper{
+        width: 80vw;
+    }
+
+    .forecast> p {
+        font-size: 120%;
     }
 }
 
@@ -239,17 +246,21 @@ body{
     }
 
     #forecast-wrapper{
-        width: 80vw;
+        width: 50vw;
     }
     
-    #forecast-container{
+    /* #forecast-container{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 0.5rem;
     }
-    
+     */
     .forecast{
         width: 80%;
         height: 4em;
+    }
+
+    .forecast> p {
+        font-size: 120%;
     }
 }
