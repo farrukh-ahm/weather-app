@@ -84,7 +84,7 @@ body{
 
 #temp > h2{
     font-family: 'Alfa Slab One', cursive;
-    font-size: 5em;
+    font-size: 4.5em;
     /* letter-spacing: 1px; */
     background-image: var(--bg-color);
     background-clip: text;
