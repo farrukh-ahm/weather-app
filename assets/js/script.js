@@ -62,8 +62,8 @@ async function getForecast(lat, lon){
 function displayData(data){
     document.getElementById("data-wrapper").removeChild(loading);
     insert = "";
-    insert = `<div id="temp"><h2>${data.current.temp_c} C</h2></div>`
-    insert += `<p id="feels">Feels Like: ${data.current.feelslike_c} C</p>`
+    insert = `<div id="temp"><h2>${data.current.temp_c}<sup>o</sup> C</h2></div>`
+    insert += `<p id="feels">Feels Like: ${data.current.feelslike_c}<sup>o</sup> C</p>`
     insert += `<p id="humidity">Humidity: ${data.current.humidity}</p>`
     insert += `<img src="${data.current.condition.icon}" id="condition-icon">`
     insert += `<p id="condition">${data.current.condition.text}</p>`
@@ -79,7 +79,7 @@ function displayData(data){
 function displayForecast(data){
     for(let i of data.forecast.forecastday){
         let dateFor = new Date(i.date_epoch * 1000).getDay();
-        insertForecast = `<div class="forecast"><p>${DAYS[dateFor]}&nbsp;&nbsp; Max: ${i.day.maxtemp_c} C | Min: ${i.day.mintemp_c} C</p><img src="${i.day.condition.icon}" class="for_img"></div>`;
+        insertForecast = `<div class="forecast"><p>${DAYS[dateFor]}&nbsp;&nbsp; Max: ${i.day.maxtemp_c}<sup>o</sup> C | Min: ${i.day.mintemp_c}<sup>o</sup> C</p><img src="${i.day.condition.icon}" class="for_img"></div>`;
         document.getElementById("forecast-container").insertAdjacentHTML("beforeend", insertForecast);
         insertForecast = "";
         console.log(dateFor);
