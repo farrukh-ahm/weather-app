@@ -76,10 +76,13 @@ body{
 }
 
 #temp{
+    inline-size: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
+    /* background-color: burlywood; */
 }
 
 #temp > h2{
@@ -163,12 +166,13 @@ body{
 
 #forecast-wrapper{
     position: absolute;
-    top: 120%;
+    top: 100%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 30rem;
     width: 100vw;
     border-radius: 20px;
+    /* background-color: blueviolet; */
 }
 
 #forecast-container{
@@ -178,7 +182,7 @@ body{
     /* background-color: hotpink; */
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 0.5rem;
+    gap: 0.1rem;
 }
 
 .forecast{
@@ -219,7 +223,7 @@ body{
 
 @media screen and (max-width: 360px){
     #temp > h2{
-        font-size: 4em;
+        font-size: 3em;
     }
 }
 
